@@ -1,0 +1,31 @@
+{
+  "title": "绯樱之眠",
+  "subtitle": "幻梦典藏",
+  "technique": "樱色微光",
+  "tagline": "沉入樱色的柔软梦境，呼吸染上晨光",
+  "edition": "001 / 001",
+  "collection": "个人全息典藏",
+  "description": "由参考图 002.jpg 生成的 3D 全息收藏卡：写实主体 + 柔粉卧室背景 + 白底深线描边。",
+  "assets": {
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "text": "./assets/text.png",
+    "lineart": "./assets/lineart.png",
+    "model": "./assets/card.glb"
+  },
+  "parameters": {
+    "subjectScale": 1.0,
+    "subjectDepth": 0.4,
+    "backgroundDepth": -0.25,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 0.65
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      -0.06,
+      -0.085
+    ]
+  }
+}
