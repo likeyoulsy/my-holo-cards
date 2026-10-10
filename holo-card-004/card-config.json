@@ -1,0 +1,31 @@
+{
+  "title": "银霜之瞳",
+  "subtitle": "冬夜星藏",
+  "technique": "星屑呼吸",
+  "tagline": "银发掩于暖绒，星河落在身后",
+  "edition": "001 / 001",
+  "collection": "个人全息典藏",
+  "description": "由参考图 145.jfif 生成的 3D 全息收藏卡：写实 CG 银发少女主体 + 梦幻星空背景 + 白底深线描边。",
+  "assets": {
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "text": "./assets/text.png",
+    "lineart": "./assets/lineart.png",
+    "model": "./assets/card.glb"
+  },
+  "parameters": {
+    "subjectScale": 1.0,
+    "subjectDepth": 0.4,
+    "backgroundDepth": -0.25,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 0.65
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      -0.06,
+      -0.085
+    ]
+  }
+}
