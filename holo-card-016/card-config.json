@@ -1,0 +1,266 @@
+{
+  "title": "拾星蝶影",
+  "subtitle": "小鬼楠优",
+  "technique": "碎钻鎏金",
+  "tagline": "提一盏星光，赴一场蝶梦",
+  "edition": "NO.016",
+  "collection": "",
+  "description": "乾坤卡：卡面开窗见蝴蝶玫瑰星夜内景，倾斜时纵深滑移；暗夜水晶蝴蝶数字卡框；金线三路（人物/背景/卡框）倾斜浮现；水晶蝴蝶卡背（璀璨星夜）动态卡背；箔光扫掠与卡边辉光完整保留。",
+  "assets": {
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "text": "./assets/text-only.png",
+    "lineart": "./assets/lineart.png",
+    "border": "./assets/border.png",
+    "model": "./assets/card.glb",
+    "bgLineart": "./assets/bg-lineart.png",
+    "borderLineart": "./assets/border-lineart.png",
+    "backBase": "./assets/back-base.png",
+    "backFlow": "./assets/back-flow.png"
+  },
+  "layers": {
+    "subject": {
+      "width": 3.6,
+      "height": 6.3,
+      "depth": -0.58,
+      "offset": [
+        0,
+        -0.6
+      ],
+      "metallic": 0,
+      "roughness": 0.6,
+      "emissive": 1
+    },
+    "text": {
+      "depth": -0.297
+    }
+  },
+  "camera": {
+    "type": "PERSP",
+    "distance": 15,
+    "lens": 30,
+    "sensorHeight": 24,
+    "keyframes": [
+      [
+        1,
+        [
+          -6,
+          0,
+          -20
+        ]
+      ],
+      [
+        25,
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      [
+        49,
+        [
+          6,
+          0,
+          20
+        ]
+      ],
+      [
+        73,
+        [
+          -2,
+          0,
+          0
+        ]
+      ],
+      [
+        96,
+        [
+          -4,
+          0,
+          -16
+        ]
+      ]
+    ]
+  },
+  "webCamera": {
+    "type": "PERSP"
+  },
+  "lighting": {
+    "roughness": 0.38,
+    "globalScale": 0.4,
+    "grazing": {
+      "pos": [
+        9.5,
+        -1.8,
+        1
+      ],
+      "energy": 1100,
+      "size": 7,
+      "color": [
+        1,
+        0.9,
+        0.7
+      ]
+    },
+    "fill": {
+      "pos": [
+        -9.5,
+        -2.5,
+        -0.5
+      ],
+      "energy": 300,
+      "size": 8,
+      "color": [
+        0.72,
+        0.82,
+        1
+      ]
+    }
+  },
+  "parameters": {
+    "subjectScale": 0.82,
+    "subjectAnchorY": 0.0224,
+    "subjectDepth": 2,
+    "backgroundDepth": -3.5,
+    "backgroundScale": 0.5,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 1,
+    "foilMask": false,
+    "holoTexture": "builtin",
+    "holoLight": "rainbow",
+    "edgeGlow": true,
+    "bgFlake": 1,
+    "bgFoil": 0,
+    "borderScale": 1.115,
+    "sweepSoft": 0.75,
+    "spotGain": 0.55,
+    "spotRadius": 0.32,
+    "sweepGain": 0.85,
+    "backfx": {
+      "mode": "none",
+      "intensity": 0
+    },
+    "foilLine": {
+      "intensity": 0.47,
+      "subject": false,
+      "background": true,
+      "border": true,
+      "text": true
+    }
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      0,
+      -0.329
+    ]
+  },
+  "typography": {
+    "font": "C:/Windows/Fonts/simkai.ttf",
+    "scale": 1,
+    "primary": [
+      255,
+      241,
+      206
+    ],
+    "accent": [
+      244,
+      208,
+      135
+    ],
+    "stroke": [
+      16,
+      21,
+      27
+    ],
+    "strokeWidth": 1,
+    "badge": "XIAOGUINANYOU",
+    "rules": [
+      1185
+    ],
+    "border": {
+      "preset": "crystal-butterfly-numbers"
+    },
+    "lines": [
+      {
+        "text": "拾星蝶影",
+        "x": 175,
+        "y": 183,
+        "size": 80,
+        "color": [
+          255,
+          241,
+          206
+        ],
+        "vertical": true
+      },
+      {
+        "text": "小鬼楠优",
+        "x": 285,
+        "y": 368,
+        "size": 50,
+        "color": [
+          244,
+          208,
+          135
+        ],
+        "vertical": true
+      },
+      {
+        "text": "提一盏星光，赴一场蝶梦",
+        "x": 553,
+        "y": 1246,
+        "size": 64,
+        "color": [
+          255,
+          241,
+          206
+        ],
+        "align": "ma"
+      },
+      {
+        "text": "NO.016",
+        "x": 78,
+        "y": 1358,
+        "size": 19,
+        "color": [
+          244,
+          208,
+          135
+        ],
+        "align": "la"
+      },
+      {
+        "text": "XIAOGUINANYOU",
+        "x": 1026,
+        "y": 1358,
+        "size": 15,
+        "color": [
+          244,
+          208,
+          135
+        ],
+        "align": "ra"
+      }
+    ]
+  },
+  "back": {
+    "preset": "topaz-wonder",
+    "flowSpeed": 0.3,
+    "warp": 0.12,
+    "glow": 2,
+    "tint": 0.38,
+    "tilt": 0.3,
+    "twinkle": 1
+  },
+  "_locked": [
+    "背景场景特效",
+    "烫金描线",
+    "卡背动态"
+  ],
+  "tiltReveal": {
+    "glow": 0.6
+  }
+}

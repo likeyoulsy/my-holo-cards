@@ -1,0 +1,32 @@
+{
+  "title": "星陨剑姬",
+  "subtitle": "幻镜典藏",
+  "technique": "晶华斩",
+  "tagline": "以星光铸剑，斩破虚妄之镜",
+  "edition": "001 / 001",
+  "collection": "个人全息典藏",
+  "description": "由参考图 001.JPG 生成的 3D 全息收藏卡：动漫主角 + 城堡大厅背景 + 白底深线描边。",
+  "assets": {
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "text": "./assets/text.png",
+    "lineart": "./assets/lineart.png",
+    "model": "./assets/card.glb",
+    "effects": "./assets/effects.png"
+  },
+  "parameters": {
+    "subjectScale": 1.0,
+    "subjectDepth": 0.4,
+    "backgroundDepth": -0.25,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 0.65
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      -0.06,
+      -0.085
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "星海咏叹",
+  "subtitle": "GOLDEN HOUR · STELLAR DIVE",
+  "technique": "星空镭射 FULL HOLO",
+  "tagline": "自黄金时刻一跃，跃入银河",
+  "edition": "No.001",
+  "collection": "个人全息典藏",
+  "description": "参考照片人物的星空全息闪卡，烫金质感与编号 No.001。",
+  "font": "C:\\Windows\\Fonts\\simkai.ttf",
+  "assets": {
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "text": "./assets/text.png",
+    "lineart": "./assets/lineart.png",
+    "effects": "./assets/effects.png",
+    "model": "./assets/card.glb"
+  },
+  "parameters": {
+    "subjectScale": 1.25,
+    "subjectDepth": 0.4,
+    "backgroundDepth": -0.25,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 0.65
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      -0.06,
+      -0.085
+    ]
+  }
+}

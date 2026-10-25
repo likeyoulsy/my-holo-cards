@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <link rel="icon" href="data:," />
+    <title>白相 · White Atelier</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- 2026-10-25：删除 head 里的重复 bundle 引用（body 尾已有一份，ES module 按 URL 去重，此处纯冗余） -->
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="wordmark" href="./" aria-label="白相首页"
+        ><span class="wordmark-cn">白相<span class="brand-dot"></span></span
+        ><span class="wordmark-en">WHITE ATELIER</span></a
+      >
+      <span class="collection-label"
+        >个人典藏 <span>/</span> <span id="edition">STUDY 001</span></span
+      >
+      <div class="header-actions">
+        <button
+          class="icon-button"
+          id="info"
+          aria-label="作品信息"
+          title="作品信息"
+          disabled
+        >
+          <i data-lucide="info"></i>
+        </button>
+        <button
+          class="icon-button save-button"
+          id="save"
+          aria-label="保存卡片图片"
+          title="保存卡片图片"
+          disabled
+        >
+          <i data-lucide="download"></i>
+        </button>
+        <button
+          class="icon-button"
+          id="fs"
+          style="width: auto; padding: 0 12px; gap: 6px"
+          aria-label="全屏查看"
+          title="全屏查看（也可按 F 键）"
+        >
+          <i data-lucide="maximize"></i><span>全屏</span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="gallery" aria-label="卡片展台">
+        <div
+          class="stage"
+          id="stage"
+          tabindex="0"
+          role="group"
+          aria-label="可旋转的全息卡片"
+        >
+          <div id="loading" class="loading" role="status">
+            <span class="loading-line"></span><span>正在装裱作品</span>
+          </div>
+        </div>
+        <div class="stage-note" aria-hidden="true">
+          <span>ART STUDY</span><span id="view-label">01 / FRONT</span>
+        </div>
+        <div class="parameter-panel panel-left" id="parameter-panel">
+          <div class="panel-heading">
+            <span>画面与景深</span>
+          </div>
+          <label class="range-row" for="scale"
+            ><span>画面比例</span><output id="scale-value"></output
+            ><input id="scale" type="range" min="0.62" max="1.35" step="0.01"
+          /></label>
+          <label class="range-row" for="depth"
+            ><span>画面景深</span><output id="depth-value"></output
+            ><input id="depth" type="range" min="-2.5" max="2.5" step="0.01"
+          /></label>
+          <label class="range-row" for="bg-depth"
+            ><span>底纹景深</span><output id="bg-depth-value"></output
+            ><input id="bg-depth" type="range" min="-3.5" max="1.0" step="0.01"
+          /></label>
+          <label class="range-row" for="reveal-glow" id="reveal-glow-row" hidden
+            ><span>显影辉光</span><output id="reveal-glow-value"></output
+            ><input id="reveal-glow" type="range" min="0" max="1" step="0.01"
+          /></label>
+          <div class="panel-heading panel-sub"><span>流光与光源</span></div>
+          <label class="range-row" for="sweep-soft"
+            ><span>流光柔度</span><output id="sweep-soft-value"></output
+            ><input id="sweep-soft" type="range" min="0" max="1" step="0.01"
+          /></label>
+          <label class="range-row" for="sweep-gain"
+            ><span>流光强度</span><output id="sweep-gain-value"></output
+            ><input id="sweep-gain" type="range" min="0.2" max="1.5" step="0.01"
+          /></label>
+          <label class="range-row" for="spot-gain"
+            ><span>光源亮度</span><output id="spot-gain-value"></output
+            ><input id="spot-gain" type="range" min="0" max="1" step="0.01" value="0.55"
+          /></label>
+          <label class="range-row" for="spot-radius"
+            ><span>光斑大小</span><output id="spot-radius-value"></output
+            ><input id="spot-radius" type="range" min="0.12" max="0.7" step="0.01" value="0.32"
+          /></label>
+          <div class="panel-heading panel-sub"><span>烫金描线</span></div>
+          <label class="range-row" for="foil-line"
+            ><span>描线强度</span><output id="foil-line-value"></output
+            ><input id="foil-line" type="range" min="0" max="2" step="0.01" value="1"
+          /></label>
+          <div class="foil-line-switches">
+            <button id="foil-line-subject" aria-pressed="false" disabled>主体描线 · 关</button>
+            <button id="foil-line-bg" aria-pressed="false" disabled>背景描线 · 关</button>
+            <button id="foil-line-border" aria-pressed="false" disabled>卡框描线 · 关</button>
+            <button id="foil-line-text" aria-pressed="false" disabled>文字描金 · 关</button>
+          </div>
+        </div>
+        <div class="parameter-panel panel-right" id="parameter-panel-2">
+          <div class="panel-heading">
+            <span>特效与动态</span>
+          </div>
+          <label class="range-row" for="fx-depth"
+            ><span>特效景深</span><output id="fx-depth-value"></output
+            ><input id="fx-depth" type="range" min="-0.3" max="0.9" step="0.01"
+          /></label>
+          <label class="range-row" for="fx-scale"
+            ><span>特效比例</span><output id="fx-scale-value"></output
+            ><input id="fx-scale" type="range" min="0.6" max="1.8" step="0.01"
+          /></label>
+          <div class="panel-heading panel-sub"><span>自动赏卡</span></div>
+          <label class="range-row" for="sway-yaw"
+            ><span>摇摆幅度</span><output id="sway-yaw-value"></output
+            ><input id="sway-yaw" type="range" min="0" max="0.6" step="0.01"
+          /></label>
+          <label class="range-row" for="sway-pitch"
+            ><span>俯仰幅度</span><output id="sway-pitch-value"></output
+            ><input id="sway-pitch" type="range" min="0" max="0.2" step="0.005"
+          /></label>
+          <label class="range-row" for="sway-speed"
+            ><span>摇摆节奏</span><output id="sway-speed-value"></output
+            ><input id="sway-speed" type="range" min="0.2" max="2.5" step="0.05"
+          /></label>
+          <label class="range-row" for="tilt" id="tilt-row" hidden
+            ><span>倾斜显影</span><output id="tilt-value">0%</output
+            ><input id="tilt" type="range" min="0" max="1" step="0.01" value="0"
+          /></label>
+          <div class="panel-heading panel-sub"><span>卡框调整</span></div>
+          <div class="border-control" id="border-control" hidden>
+            <label class="range-row" for="border-scale">
+              <span>卡框缩放</span><output id="border-scale-value"></output>
+              <input id="border-scale" type="range" min="0.5" max="2" step="0.01" value="1" />
+            </label>
+            <button
+              id="border-lock"
+              class="icon-button lock-button"
+              type="button"
+              aria-pressed="false"
+              aria-label="锁定卡框缩放"
+              title="锁定卡框缩放"
+            >
+              <i data-lucide="lock"></i>
+            </button>
+          </div>
+        </div>
+        <div class="parameter-panel panel-left" id="parameter-panel-3">
+          <div class="panel-heading" id="backfx-heading" hidden>
+            <span>背景场景特效</span>
+          </div>
+          <div id="backfx-control" hidden>
+            <div class="face-picker" id="backfx-picker" role="group" aria-label="背景场景特效"></div>
+            <div id="backfx-body">
+            <label class="range-row" for="backfx-intensity"
+              ><span>强度</span><output id="backfx-intensity-value">0%</output
+              ><input
+                id="backfx-intensity"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0"
+            /></label>
+            <div id="backfx-params"></div>
+            </div>
+          </div>
+          <div class="panel-heading" id="cardback-heading" hidden>
+            <span>卡背动态</span>
+          </div>
+          <div id="cardback-control" hidden>
+            <div id="cardback-params"></div>
+          </div>
+        </div>
+      </section>
+      <section class="artwork-bar" aria-label="作品与材质">
+        <div class="artwork-title">
+          <div class="title-line">
+            <h1 id="card-title">BOND</h1>
+            <span id="subtitle">共生</span>
+          </div>
+          <p id="description">光与影，彼此相依。</p>
+        </div>
+        <div class="face-picker face-picker-actions" role="group" aria-label="卡片朝向与动作">
+          <button id="front" aria-pressed="true" disabled>正面</button
+          ><button id="back" aria-pressed="false" disabled>背面</button
+          ><button id="auto" aria-pressed="false" disabled>自动旋转</button
+          ><button id="reset" aria-pressed="false" disabled>重置</button
+          ><button id="edge-glow" aria-pressed="true" disabled>卡边辉光 · 开</button
+          ><button id="bg-flake" aria-pressed="true" disabled>背景碎光 · 开</button
+          ><button id="bg-foil" aria-pressed="false" disabled>背景连续箔光 · 开</button>
+        </div>
+        <div class="finish-cluster">
+          <button
+            id="depth-toggle"
+            class="depth-toggle"
+            type="button"
+            aria-controls="parameter-panel parameter-panel-2 parameter-panel-3"
+            aria-expanded="true"
+            aria-label="显示或隐藏景深调整"
+            title="显示或隐藏景深调整"
+          >
+            <i data-lucide="sliders-horizontal"></i><span>景深调整</span>
+          </button>
+          <div class="finish-control">
+          <div class="finish-heading">
+            <span>卡面质感</span>
+            <div class="swatches" role="group" aria-label="卡面材质">
+              <button
+                class="swatch pearl"
+                data-finish="pearl"
+                aria-pressed="true"
+                aria-label="珠光"
+                title="珠光"
+                disabled
+              ></button
+              ><button
+                class="swatch silver"
+                data-finish="silver"
+                aria-pressed="false"
+                aria-label="银箔"
+                title="银箔"
+                disabled
+              ></button
+              ><button
+                class="swatch gold"
+                data-finish="gold"
+                aria-pressed="false"
+                aria-label="烫金"
+                title="烫金"
+                disabled
+              ></button
+              ><button
+                class="swatch original"
+                data-finish="original"
+                aria-pressed="false"
+                aria-label="原画"
+                title="原画"
+                disabled
+              ></button>
+            </div>
+            <span id="finish-name">烫金</span>
+          </div>
+          <div class="finish-heading">
+            <span>内置光</span>
+            <div class="swatches" role="group" aria-label="内置光">
+              <button class="swatch" data-light="rainbow" aria-pressed="true" aria-label="彩虹光" title="彩虹光" style="background:linear-gradient(90deg,#e04a4a,#e0b24a,#4ac04a,#4a7de0,#a04ac0)"></button
+              ><button class="swatch" data-light="red" aria-pressed="false" aria-label="红光" title="红光" style="background:#d62828"></button
+              ><button class="swatch" data-light="white" aria-pressed="false" aria-label="白光" title="白光" style="background:#f2f2f2"></button>
+            </div>
+            <span id="light-name">彩虹</span>
+          </div>
+          <label class="foil-row" for="foil"
+            ><span>光泽</span
+            ><input
+              id="foil"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.52"
+              disabled
+            /><output id="foil-value">52%</output></label
+          >
+          <label class="foil-row" for="glint"
+            ><span>亮度</span
+            ><input
+              id="glint"
+              type="range"
+              min="0"
+              max="3"
+              step="0.01"
+              value="1"
+            /><output id="glint-value">1.00</output></label
+          >
+          <label class="foil-row" for="lens"
+            ><span>镜片</span
+            ><input
+              id="lens"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0"
+            /><output id="lens-value">0.00</output></label
+          >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>光影之间，自有回响。</span><span>PERSONAL ART COLLECTION</span>
+    </footer>
+    <dialog id="about" aria-labelledby="about-title">
+      <button
+        id="close-about"
+        class="icon-button modal-close"
+        aria-label="关闭作品信息"
+        title="关闭作品信息"
+      >
+        <i data-lucide="x"></i>
+      </button>
+      <p class="dialog-mark">白相</p>
+      <h2 id="about-title">共生 / BOND</h2>
+      <p id="about-description"></p>
+      <dl>
+        <div>
+          <dt>来源</dt>
+          <dd>用户提供的参考作品</dd>
+        </div>
+        <div>
+          <dt>呈现</dt>
+          <dd>个人艺术卡片习作</dd>
+        </div>
+        <div>
+          <dt>编号</dt>
+          <dd id="about-edition">STUDY 001</dd>
+        </div>
+      </dl>
+    </dialog>
+    <div id="notice" role="status" class="notice" hidden></div>
+    <script type="module" src="./app.bundle.js?v20261025175721"></script>
+  </body>
+</html>
