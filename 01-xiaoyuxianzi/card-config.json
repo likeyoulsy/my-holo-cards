@@ -1,0 +1,273 @@
+{
+  "title": "袖卷流云",
+  "subtitle": "小鱼仙子",
+  "technique": "飞天舞袖 鱼衔月色",
+  "tagline": "霓裳过处，璎珞有声",
+  "edition": "NO.001",
+  "collection": "",
+  "description": "",
+  "assets": {
+    "model": "./assets/card.glb",
+    "subject": "./assets/subject.png",
+    "background": "./assets/background.png",
+    "lineart": "./assets/lineart.png",
+    "text": "./assets/text-only.png",
+    "border": "./assets/border.png",
+    "bgLineart": "./assets/bg-lineart.png",
+    "borderLineart": "./assets/border-lineart.png",
+    "backBase": "./assets/back-base.png",
+    "backFlow": "./assets/back-flow.png",
+    "backSubject": "./assets/back-subject.png"
+  },
+  "layers": {
+    "subject": {
+      "width": 4.2,
+      "height": 6.3,
+      "depth": -0.58,
+      "offset": [
+        0,
+        -0.6
+      ],
+      "metallic": 0,
+      "roughness": 0.6,
+      "emissive": 1
+    },
+    "text": {
+      "depth": -0.297
+    }
+  },
+  "camera": {
+    "type": "PERSP",
+    "distance": 15,
+    "lens": 30,
+    "sensorHeight": 24,
+    "keyframes": [
+      [
+        1,
+        [
+          -6,
+          0,
+          -20
+        ]
+      ],
+      [
+        25,
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      [
+        49,
+        [
+          6,
+          0,
+          20
+        ]
+      ],
+      [
+        73,
+        [
+          -2,
+          0,
+          0
+        ]
+      ],
+      [
+        96,
+        [
+          -4,
+          0,
+          -16
+        ]
+      ]
+    ]
+  },
+  "webCamera": {
+    "type": "PERSP"
+  },
+  "lighting": {
+    "roughness": 0.38,
+    "globalScale": 0.4,
+    "grazing": {
+      "pos": [
+        9.5,
+        -1.8,
+        1
+      ],
+      "energy": 1100,
+      "size": 7,
+      "color": [
+        1,
+        0.9,
+        0.7
+      ]
+    },
+    "fill": {
+      "pos": [
+        -9.5,
+        -2.5,
+        -0.5
+      ],
+      "energy": 300,
+      "size": 8,
+      "color": [
+        0.72,
+        0.82,
+        1
+      ]
+    }
+  },
+  "parameters": {
+    "subjectScale": 0.82,
+    "subjectAnchorY": 0.0224,
+    "subjectDepth": 2.5,
+    "backgroundDepth": -3.5,
+    "backgroundScale": 0.5,
+    "effectsScale": 1,
+    "effectsDepth": 0.5,
+    "foil": 1,
+    "foilMask": false,
+    "holoTexture": "builtin",
+    "holoLight": "rainbow",
+    "edgeGlow": true,
+    "bgFlake": 1,
+    "bgFoil": 0,
+    "borderScale": 1,
+    "backfx": {
+      "mode": "starflash",
+      "intensity": 0.7
+    },
+    "foilLine": {
+      "intensity": 1,
+      "subject": false,
+      "background": true,
+      "border": true,
+      "text": true,
+      "backgroundIntensity": 0.8,
+      "borderIntensity": 0.55,
+      "textIntensity": 1,
+      "subjectIntensityB": 1,
+      "subjectIntensityC": 1
+    },
+    "sweepSoft": 0.29,
+    "sweepGain": 1,
+    "spotGain": 0.55,
+    "spotRadius": 0.32
+  },
+  "safeArea": {
+    "scale": 1.12,
+    "offset": [
+      0,
+      -0.288
+    ]
+  },
+  "typography": {
+    "font": "C:/Windows/Fonts/simkai.ttf",
+    "scale": 1,
+    "primary": [
+      235,
+      240,
+      255
+    ],
+    "accent": [
+      255,
+      220,
+      140
+    ],
+    "stroke": [
+      15,
+      20,
+      40
+    ],
+    "strokeWidth": 1,
+    "badge": "",
+    "rules": [
+      1185
+    ],
+    "border": {
+      "preset": "flying-ribbon"
+    },
+    "lines": [
+      {
+        "text": "袖卷流云",
+        "x": 175,
+        "y": 183,
+        "size": 80,
+        "color": [
+          235,
+          240,
+          255
+        ],
+        "vertical": true
+      },
+      {
+        "text": "小鱼仙子",
+        "x": 285,
+        "y": 368,
+        "size": 50,
+        "color": [
+          255,
+          220,
+          140
+        ],
+        "vertical": true
+      },
+      {
+        "text": "霓裳过处，璎珞有声",
+        "x": 512,
+        "y": 1250,
+        "size": 56,
+        "color": [
+          235,
+          240,
+          255
+        ],
+        "align": "ma"
+      },
+      {
+        "text": "NO.001",
+        "x": 78,
+        "y": 1358,
+        "size": 19,
+        "color": [
+          255,
+          220,
+          140
+        ],
+        "align": "la"
+      }
+    ]
+  },
+  "back": {
+    "preset": "feitian-apsara",
+    "behind": 0.88,
+    "offsetX": 0.021,
+    "offsetY": -0.021,
+    "flowSpeed": 0.095,
+    "warp": 0.12,
+    "glow": 0.71,
+    "tint": 0.15,
+    "tilt": 0.08
+  },
+  "sliderRange": [
+    0.743,
+    1.613
+  ],
+  "_locked": [
+    "流光与光源",
+    "卡背动态",
+    "背景场景特效",
+    "特效与动态",
+    "自动赏卡",
+    "卡框调整",
+    "画面与景深",
+    "烫金描线"
+  ],
+  "autoSway": {
+    "yaw": 0.44,
+    "pitch": 0.07,
+    "speed": 1.5
+  }
+}
